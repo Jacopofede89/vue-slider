@@ -1,5 +1,8 @@
+// Nuova istanza Vue
+
 var carusel = new Vue({
-    el:"#app",
+    // Collegamento con html tramite id
+    el:"#myapp",
     data:{
         activeSlide: 0,
         slides: [
@@ -31,21 +34,21 @@ var carusel = new Vue({
         ]
     },
 
+    // Proprietà methods con 2 funzioni all'interno del quale ci sarà una condizione che detrminerà lo scorrimento delle img 
     methods: {
         nextSlide: function(){
+            console.log('nextSlide');
             if(this.activeSlide === this.slides.length -1){
                 this.activeSlide = 0;
             } else {
-            this.activeSlide ++;
+                this.activeSlide++;
             }
-           
         },
-
         prevSlide: function(){
             if(this.activeSlide === 0){
                 this.activeSlide = this.slides.length -1;
             } else {
-            this.activeSlide --;
+            this.activeSlide--;
             }
            
         }
